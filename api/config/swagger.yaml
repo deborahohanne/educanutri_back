@@ -1,0 +1,13 @@
+swagger: '2.0'
+
+info:
+  version: 0.1.0
+  title: Eleven API
+  description: 'Projeto Educanutri'
+
+schemes:
+  - http
+
+tags:
+  - name: Educanutri
+    description: ''
