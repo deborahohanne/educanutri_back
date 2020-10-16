@@ -1,6 +1,8 @@
 from fastapi import FastAPI, APIRouter
 
+
 algoritmo = APIRouter()
+
 
 @algoritmo.get("/genetic")
 def algoritmo_genetico(idade_inicial: int, idade_final: int):

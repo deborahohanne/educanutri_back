@@ -15,6 +15,7 @@ class AlimentoBase(BaseModel):
     ferro: float
     zinco: float
     magnesio: int
+    grupo: int
 
 
 class AlimentoCreate(AlimentoBase):
@@ -23,7 +24,6 @@ class AlimentoCreate(AlimentoBase):
 
 class Alimento(BaseModel):
     id: int
-    nome: str
 
     class Config:
         orm_mode = True
@@ -34,7 +34,6 @@ class PratoBase(BaseModel):
     tipo: int
     cor: int
     consistencia: int
-    ingredientes: List[Alimento] = []
 
 
 class PratoCreate(PratoBase):
@@ -43,7 +42,24 @@ class PratoCreate(PratoBase):
 
 class Prato(BaseModel):
     id: int
-    alimentos: List[Alimento] = []
+
+    class Config:
+        orm_mode = True
+
+
+class CriacaoBase(BaseModel):
+    id_alimento: int
+    id_prato: int
+
+
+class CriacaoCreate(CriacaoBase):
+    pass
+
+
+class Criacao(BaseModel):
+    id: int
+    id_alimento: int
+    id_prato: int
 
     class Config:
         orm_mode = True

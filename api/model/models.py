@@ -12,8 +12,8 @@ class Prato(Base):
     tipo = Column(Integer)
     cor = Column(Integer)
     consistencia = Column(Integer)
-    ingredientes = Column(String)
-
+    
+    criacao = relationship("Criacao", back_populates="pratos")
 
 
 class Alimento(Base):
@@ -31,6 +31,16 @@ class Alimento(Base):
     ferro = Column(Float)
     zinco = Column(Float)
     magnesio = Column(Float)
-  
- 
+    grupo = Column(Integer)
 
+    criacao = relationship("Criacao", back_populates="alimentos")
+  
+class Criacao(Base):
+    __tablename__ = "criacao"
+
+    id = Column(Integer, primary_key=True, index=True)
+    id_alimento = Column(Integer, ForeignKey("alimentos.id"))
+    id_prato = Column(Integer, ForeignKey("pratos.id"))
+
+    pratos = relationship("Prato", back_populates="criacao")
+    alimentos = relationship("Alimento", back_populates="criacao")
