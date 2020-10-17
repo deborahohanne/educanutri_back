@@ -6,7 +6,6 @@
 </div>
 
 ## DESCRIÇÃO DO PROJETO
-<p align="justify"> O software apresentado é uma ferramenta de auxílio a solicitação de estampagem de placas MERCOSUL, implementado na linguagem Kotlin com especificação para Android. </p>
 
 <p align="justify"> A finalidade da aplicação é minimizar o erro nutricional e facilitar o trabalho dos nutricionistas no gerenciamento dos cardápios nutricionais para alimentação escolar, o EDUCANUTRI fornecerá pratos que buscam a melhor combinação para a elaboração do cardápio. </p>
 
