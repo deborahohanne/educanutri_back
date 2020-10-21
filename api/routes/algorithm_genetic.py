@@ -18,7 +18,7 @@ def get_db():
 @algoritmo.get("/genetic/")
 def algoritmo_genetico(db: Session = Depends(get_db)):
     '''
-        Descrição da API
+        Descrição
     '''
 
     card_dia_lista, card_dia_dict = generate_menu(db=db)

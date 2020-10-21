@@ -57,17 +57,11 @@ def plate_random_desjejum(db: Session):
 
     pratos_desjejum = generate_plate(1, db=db)
 
-    tam_frutas = len(pratos_desjejum[0])
-    tam_leite_der = len(pratos_desjejum[1])
-    tam_pao_cer = len(pratos_desjejum[2])
+    for i in range(len(pratos_desjejum)):
+        tam = len(pratos_desjejum[i])
+        aux = randint(0, tam-1)
 
-    aux1 = randint(0, tam_frutas-1)
-    aux2 = randint(0, tam_leite_der-1)
-    aux3 = randint(0, tam_pao_cer-1)
-
-    prato_desjejum.append(pratos_desjejum[0][aux1])
-    prato_desjejum.append(pratos_desjejum[1][aux2])
-    prato_desjejum.append(pratos_desjejum[2][aux3])
+        prato_desjejum.append(pratos_desjejum[i][aux])
 
     return prato_desjejum
 
@@ -78,29 +72,11 @@ def plate_random_almoco(db: Session):
 
     pratos_almoco = generate_plate(2, db=db)
 
-    tam_acomp_arroz = len(pratos_almoco[0])
-    tam_acomp_feijao = len(pratos_almoco[1])
-    tam_entrada = len(pratos_almoco[2])
-    tam_guarnicao = len(pratos_almoco[3])
-    tam_principal = len(pratos_almoco[4])
-    tam_sobremesa = len(pratos_almoco[5])
-    tam_suco = len(pratos_almoco[6])
+    for i in range(len(pratos_almoco)):
+        tam = len(pratos_almoco[i])
+        aux = randint(0, tam-1)
 
-    aux1 = randint(0, tam_acomp_arroz-1)
-    aux2 = randint(0, tam_acomp_feijao-1)
-    aux3 = randint(0, tam_entrada-1)
-    aux4 = randint(0, tam_guarnicao-1)
-    aux5 = randint(0, tam_principal-1)
-    aux6 = randint(0, tam_sobremesa-1)
-    aux7 = randint(0, tam_suco-1)
-
-    prato_almoco.append(pratos_almoco[0][aux1])
-    prato_almoco.append(pratos_almoco[1][aux2])
-    prato_almoco.append(pratos_almoco[2][aux3])
-    prato_almoco.append(pratos_almoco[3][aux4])
-    prato_almoco.append(pratos_almoco[4][aux5])
-    prato_almoco.append(pratos_almoco[5][aux6])
-    prato_almoco.append(pratos_almoco[6][aux7])
+        prato_almoco.append(pratos_almoco[i][aux])
 
     return prato_almoco
 
@@ -111,16 +87,10 @@ def plate_random_lanche(db: Session):
 
     pratos_lanche = generate_plate(3, db=db)
 
-    tam_frutas = len(pratos_lanche[0])
-    tam_bebidas = len(pratos_lanche[1])
-    tam_pao_cer = len(pratos_lanche[2])
+    for i in range(len(pratos_lanche)):
+        tam = len(pratos_lanche[i])
+        aux = randint(0, tam-1)
 
-    aux1 = randint(0, tam_frutas-1)
-    aux2 = randint(0, tam_bebidas-1)
-    aux3 = randint(0, tam_pao_cer-1)
-
-    prato_lanche.append(pratos_lanche[0][aux1])
-    prato_lanche.append(pratos_lanche[1][aux2])
-    prato_lanche.append(pratos_lanche[2][aux3])
+        prato_lanche.append(pratos_lanche[i][aux])
     
     return prato_lanche
