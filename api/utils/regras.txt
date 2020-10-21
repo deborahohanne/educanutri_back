@@ -11,6 +11,7 @@ cor = {1: 'amarelo', 2: 'vermelho', 3: 'verde', 4: 'marrom', 5: 'N/T'}
 
 consistencia = {1: 'Líquido/pastoso', 2: 'Semi-sólido/sólido'}
 
+refeicao = {1: "desjejum", 2: "almoço", 3: "lanche"}
 
 {
   "nome": "Bolo",
