@@ -20,4 +20,16 @@ def generate_menu(db: Session):
 
     cardapio_dia_dict = {"desjejum": prato_desjejum, "almoco": prato_almoco, "lanche": prato_lanche}
 
-    return cardapio_dia_lista, cardapio_dia_dict
+    return cardapio_dia_dict
+
+
+def generate_menu_week(db: Session):
+
+    cardapio = {}
+    cardapios_semana = []
+
+    for i in range(5):
+        cardapio = generate_menu(db=db)
+        cardapios_semana.append(cardapio)
+
+    return cardapios_semana

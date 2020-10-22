@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter, Depends
-from api.modules.menu_module import generate_menu
+from api.modules.algorithm_genetic_module import generate_population
 from sqlalchemy.orm import Session
 from api.model.database import SessionLocal, engine
 
@@ -21,8 +21,10 @@ def algoritmo_genetico(db: Session = Depends(get_db)):
         Descrição
     '''
 
-    card_dia_lista, card_dia_dict = generate_menu(db=db)
+    tam_pop = 2
 
-    result = card_dia_dict
+    populacao = generate_population(tam_pop=tam_pop, db=db) 
+
+    result = populacao
 
     return {"resultado": result}
