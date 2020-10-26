@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
-from api.model import crud, models, schemas, search
+from api.model import crud, models, schemas
+from api.model.search import search_food, search_plate
 from api.model.database import SessionLocal
 
 from random import randint
@@ -10,22 +11,22 @@ def generate_plate(refeicao: int, db: Session):
     lista_refeicoes = []
 
     if refeicao == 1:
-        fruta = search.search_plate(db=db, tipo=8)
-        leite_der = search.search_plate(db=db, tipo=7)
-        pao_cereal = search.search_plate(db=db, tipo=8)
+        fruta = search_food(db=db, grupo=3)
+        leite_der = search_food(db=db, grupo=7)
+        pao_cereal = search_food(db=db, grupo=1)
 
         lista_refeicoes.append(fruta)
         lista_refeicoes.append(leite_der)
         lista_refeicoes.append(pao_cereal)
 
     elif refeicao == 2:
-        acomp_arroz = search.search_plate(db=db, tipo=1)
-        acomp_feijao = search.search_plate(db=db, tipo=2)
-        entrada = search.search_plate(db=db, tipo=3)
-        guarnicao = search.search_plate(db=db, tipo=4)
-        principal = search.search_plate(db=db, tipo=5)
-        sobremesa = search.search_plate(db=db, tipo=6)
-        suco = search.search_plate(db=db, tipo=7)
+        acomp_arroz = search_plate(db=db, tipo=1)
+        acomp_feijao = search_plate(db=db, tipo=2)
+        entrada = search_plate(db=db, tipo=3)
+        guarnicao = search_plate(db=db, tipo=4)
+        principal = search_plate(db=db, tipo=5)
+        sobremesa = search_plate(db=db, tipo=6)
+        suco = search_plate(db=db, tipo=7)
 
         lista_refeicoes.append(acomp_arroz)
         lista_refeicoes.append(acomp_feijao)
@@ -37,9 +38,9 @@ def generate_plate(refeicao: int, db: Session):
 
 
     elif refeicao == 3:
-        fruta = search.search_plate(db=db, tipo=8)
-        bebida = search.search_plate(db=db, tipo=7)
-        pao_cereal = search.search_plate(db=db, tipo=8)
+        fruta = search_food(db=db, grupo=3)
+        bebida = search_food(db=db, grupo=8)
+        pao_cereal = search_food(db=db, grupo=1)
 
         lista_refeicoes.append(fruta)
         lista_refeicoes.append(bebida)
