@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter, Depends
-from api.modules.algorithm_genetic_module import generate_population
+from api.modules.algorithm_genetic_module import generate_population, function_nutritional_error
 from sqlalchemy.orm import Session
 from api.model.database import SessionLocal, engine
 
@@ -27,4 +27,6 @@ def algoritmo_genetico(db: Session = Depends(get_db)):
 
     result = populacao
 
-    return {"resultado": result}
+    card_diario = function_nutritional_error(populacao, db=db)
+
+    return {"resultado": card_diario}

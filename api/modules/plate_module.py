@@ -19,6 +19,7 @@ def generate_plate(refeicao: int, db: Session):
         lista_refeicoes.append(leite_der)
         lista_refeicoes.append(pao_cereal)
 
+
     elif refeicao == 2:
         acomp_arroz = search_plate(db=db, tipo=1)
         acomp_feijao = search_plate(db=db, tipo=2)
