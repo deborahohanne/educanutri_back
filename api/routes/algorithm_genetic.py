@@ -22,14 +22,16 @@ def algoritmo_genetico(db: Session = Depends(get_db)):
     '''
 
     tam_pop = 1
+    somas = []
 
     populacao = generate_population(tam_pop=tam_pop, db=db) 
 
-    result = populacao
+    for individuo in populacao:
+        soma = function_soma(individuo, db=db)
+        somas.append(soma)
 
-    for i in range(len(populacao)):
-        soma = function_soma(populacao[i], db=db)
-        print(soma)
-
+    result = somas
+    
+    print(somas)
 
     return {"resultado": result}
