@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter, Depends
-from api.modules.algorithm_genetic_module import generate_population, function_nutritional_error
+from api.modules.algorithm_genetic_module import generate_population, function_soma
 from sqlalchemy.orm import Session
 from api.model.database import SessionLocal, engine
 
@@ -21,12 +21,15 @@ def algoritmo_genetico(db: Session = Depends(get_db)):
         Descrição
     '''
 
-    tam_pop = 2
+    tam_pop = 1
 
     populacao = generate_population(tam_pop=tam_pop, db=db) 
 
     result = populacao
 
-    card_diario = function_nutritional_error(populacao, db=db)
+    for i in range(len(populacao)):
+        soma = function_soma(populacao[i], db=db)
+        print(soma)
 
-    return {"resultado": card_diario}
+
+    return {"resultado": result}

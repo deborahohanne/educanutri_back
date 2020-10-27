@@ -1,32 +1,24 @@
 from sqlalchemy.orm import Session
-from api.model import crud, models, schemas, search
+from api.model import crud, models, schemas
+from api.model.search import search_foods, search_creation
 from api.model.database import SessionLocal
  
 
 
-def plates(populacao, db: Session):
+def plates(almoco, db: Session):
 
-    tam_pop = len(populacao)
-    pratos_dia = []
-    pratos = []
+    alimentos = search_creation(db=db, id_prato=almoco.id)
+    alimentos_prato = []
 
-    for i in range(tam_pop):
-        individuo = populacao[i]
-        for j in range(len(individuo)):
-            cardapio_semana = populacao[i][j]
-            for k in range(len(cardapio_semana)):
-                cardapio_dia = cardapio_semana[k]
-                pratos_dia.append(cardapio_dia['desjejum'])
-                pratos_dia.append(cardapio_dia['almoco'])
-                pratos_dia.append(cardapio_dia['lanche'])
+    for i in range(len(alimentos)):
+        alimentos_prato.append(search_foods(db=db, id_alimento=alimentos[i].id_alimento))
 
-                pratos.append(pratos_dia)
-
-    return pratos
+    return alimentos_prato
 
 
 def card(pratos_dia, db: Session): 
 
+    '''
     pratos_alimentos_lis = []
     card = []
     alimentos_almoco = []
@@ -46,5 +38,5 @@ def card(pratos_dia, db: Session):
                         card.append(pratos_dia[0])
                         card.append(alimentos_almoco)
                         card.append(pratos_dia[2])
-
+    '''
     return card
