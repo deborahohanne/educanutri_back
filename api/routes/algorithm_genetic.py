@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter, Depends
-from api.modules.algorithm_genetic_module import generate_population, function_soma
+from api.modules.algorithm_genetic_module import generate_population, function_fitness, function_selection, crossover
 from sqlalchemy.orm import Session
 from api.model.database import SessionLocal, engine
 
@@ -20,18 +20,17 @@ def algoritmo_genetico(db: Session = Depends(get_db)):
     '''
         Descrição
     '''
-
-    tam_pop = 1
-    somas = []
+    
+    tam_pop = 5
 
     populacao = generate_population(tam_pop=tam_pop, db=db) 
 
-    for individuo in populacao:
-        soma = function_soma(individuo, db=db)
-        somas.append(soma)
+    fitness = function_fitness(populacao, db=db)
 
-    result = somas
+    selecao = function_selection(fitness)
+
+    cruzados = crossover(selecao)
+
+    result = cruzados
     
-    print(somas)
-
     return {"resultado": result}
