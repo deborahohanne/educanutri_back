@@ -29,7 +29,5 @@ app.include_router(algorithm_genetic.algoritmo, tags=['Algoritmo genético'])
 app.include_router(export_data.data, tags=['Data'])
 
 
-'''
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-'''
+    uvicorn.run(app, host="0.0.0.0", port=80)
