@@ -11,3 +11,5 @@ starlette==0.13.6
 typing-extensions==3.7.4.3
 uvicorn==0.12.1
 zipp==3.3.0
+uvicorb==0.9.0
+gunicorn==20.0.4
