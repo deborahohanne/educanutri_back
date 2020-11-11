@@ -78,10 +78,8 @@ def function_soma(individuo, db: Session):
     return card_dia
 
 
-def function_fitness(populacao, db: Session):
-
+def function_fitness(valor_cliente, populacao, db: Session):
     nova_populacao = []
-    valor_cliente = 250.00  
     valores_refeicoes = []
     valor_aceito = []
 

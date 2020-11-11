@@ -15,17 +15,15 @@ def get_db():
         db.close()
     
 
-@algoritmo.get("/genetic/")
-def algoritmo_genetico(db: Session = Depends(get_db)):
+@algoritmo.get("/genetic/{tam_pop}")
+def algoritmo_genetico(tam_pop: int, valor_max: float, db: Session = Depends(get_db)):
     '''
         Descrição
     '''
-    
-    tam_pop = 5
 
     populacao = generate_population(tam_pop=tam_pop, db=db) 
 
-    fitness = function_fitness(populacao, db=db)
+    fitness = function_fitness(valor_max, populacao, db=db)
 
     selecao = function_selection(fitness)
 
