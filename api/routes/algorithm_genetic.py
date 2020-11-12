@@ -20,8 +20,6 @@ def algoritmo_genetico(tam_pop: int, valor_max: float, db: Session = Depends(get
     '''
         Descrição: Rota responsável por gerar os cardápios semanais.
     '''
-    
-    tam_pop = 5
 
     populacao = generate_population(tam_pop=tam_pop, db=db) 
 

@@ -79,7 +79,7 @@ def function_soma(individuo, db: Session):
 
 
 def function_fitness(valor_max, populacao, db: Session):
-
+    
     nova_populacao = []
     valor_cliente = valor_max 
     valores_refeicoes = []
