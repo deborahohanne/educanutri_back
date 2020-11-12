@@ -15,10 +15,10 @@ def get_db():
         db.close()
     
 
-@algoritmo.get("/genetic/{tam_pop}")
+@algoritmo.get("/genetic/{tam_pop}/{valor_max}")
 def algoritmo_genetico(tam_pop: int, valor_max: float, db: Session = Depends(get_db)):
     '''
-        Descrição
+        Descrição: Rota responsável por gerar os cardápios semanais.
     '''
 
     populacao = generate_population(tam_pop=tam_pop, db=db) 
