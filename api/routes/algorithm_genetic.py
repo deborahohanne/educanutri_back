@@ -18,7 +18,7 @@ def get_db():
 @algoritmo.get("/genetic/{tam_pop}/{valor_max}")
 def algoritmo_genetico(tam_pop: int, valor_max: float, db: Session = Depends(get_db)):
     '''
-        Descrição: Rota responsável por gerar os cardápios.
+        Descrição: Rota responsável por gerar os cardápios semanais.
     '''
     
     tam_pop = 5
