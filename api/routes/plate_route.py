@@ -18,7 +18,7 @@ def get_db():
 
 
 @prato.post("/prato/criar/", response_model=schemas.Prato)
-def create_plate(prato: schemas.PratoCreate, db: Session = Depends(get_db)):
+def create_plate(nome: str, tipo: int, cor: int, consistencia: int, prato: schemas.PratoCreate, db: Session = Depends(get_db)):
     prato = crud.create_plate(db=db, prato=prato)
     return prato
 
@@ -35,7 +35,7 @@ def read_plate_by_id(prato_id: int, db: Session = Depends(get_db)):
 
 
 @prato.post("/prato/adicionar/alimento/", response_model=schemas.Criacao)
-def add_plate(criacao: schemas.CriacaoCreate, db: Session = Depends(get_db)):
+def add_plate(id_alimento: int, id_prato: int, criacao: schemas.CriacaoCreate, db: Session = Depends(get_db)):
     return crud.create_creation(db=db, criacao=criacao)
 
 
