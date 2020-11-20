@@ -17,7 +17,8 @@
 
 <ul>
    <li><b>Linguagem:</b> Python</li>
-   <li><b>Arquitetura:</b> MVVMI (Model – View – View Model - interactor) </li> 
+   <li><b>FastAPI/b></li> 
+   <li><b>Docker</b></li> 
 </ul>   
    
 ## REPOSITÓRIO FRONT-END
