@@ -2,7 +2,7 @@
 
 <p align="center"> Status do Projeto: Em desenvolvimento.
 <div align="center">   
-   <img width="407"  alt="IMAGEM" src="">
+   <img width="200" alt="logo" src="https://user-images.githubusercontent.com/48803004/99796555-78219200-2b0c-11eb-9f90-fa303c4499fa.png">
 </div>
 
 ## DESCRIÇÃO DO PROJETO
@@ -12,8 +12,19 @@
 <p align="justify"> O EDUCANUTRI visa resolver problemas na elaboração de cardápios nutricionais com uma proposta de solução do sistema para fornecer aos usuários gerais um formulário de solicitação de um cardápio nutricional baseado em uma faixa etária, características dos alimentos como a cor, consistência e variedade, e simultaneamente um baixo custo financeiro. </p>
 
 <p align="justify">Para mais informações leia o <b><a href="">Artigo<a></b>.  </p>
+   
+## FERRAMENTAS
+
+<ul>
+   <li><b>Linguagem:</b> Python</li>
+   <li><b>Arquitetura:</b> MVVMI (Model – View – View Model - interactor) </li> 
+</ul>   
+   
+## REPOSITÓRIO FRONT-END
+
+<p align="justify"><a href="https://github.com/deborahohanne/educanutri_back"> EDUCANUTRI - FRONT-END </a> </p>
   
-  ## DESENVOLVEDORES
+## DESENVOLVEDORES
 <p align="justify"> :octocat: <a href="https://github.com/deborahohanne"> Deborah Ohanne </a> </p>
 <p align="justify"> :octocat: <a href="https://github.com/MilenaNobre"> Milena Nobre </a> </p>
 <p align="justify"> :octocat: <a href="https://github.com/jjorge98"> Jorge Júnior </a> </p>
