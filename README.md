@@ -22,7 +22,7 @@
    
 ## REPOSITÓRIO FRONT-END
 
-<p align="justify"><a href="https://github.com/deborahohanne/educanutri_back"> EDUCANUTRI - FRONT-END </a> </p>
+<p align="justify"><a href="https://github.com/MilenaNobre/educanutri_frontend"> EDUCANUTRI - FRONT-END </a> </p>
   
 ## DESENVOLVEDORES
 <p align="justify"> :octocat: <a href="https://github.com/deborahohanne"> Deborah Ohanne </a> </p>
