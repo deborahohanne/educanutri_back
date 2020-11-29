@@ -119,8 +119,8 @@ def function_soma(cardapio_dia, db: Session):
 def function_fitness(populacao, db: Session):
     nova_populacao = []
 
-    referencia_nutricional = {"Energia": 1305, "CHO": 212.1, "PTN": 40.8, "LIP": 32.7, "Fibras": 18.3, "Ca": 780,
-                              "Fe": 6.3, "Mg": 189, "Zn": 5.4}
+    referencia_nutricional = {"Energia": 435, "CHO": 70.7, "PTN": 13.6, "LIP": 10.9, "Fibras": 6.1, "Ca": 260,
+                              "Fe": 2.1, "Mg": 63, "Zn": 1.8}
 
     qtd_ind = 0
 
@@ -131,11 +131,11 @@ def function_fitness(populacao, db: Session):
         flag = 0
 
         for i in referencia_nutricional:
-            if referencia_nutricional[i] > nutrientes[i]:
+            if referencia_nutricional[i] < nutrientes[i]:
                 flag += 1
 
         if flag > 4:
-            if somas['soma_desjejum'] < 3 and somas['soma_almoco'] < 6 and somas['soma_lanche'] < 3:
+            if somas['soma_desjejum'] < 8 and somas['soma_almoco'] < 18 and somas['soma_lanche'] < 8:
                 qtd_ind += 1
                 for _ in range(flag):
                     nova_populacao.append(individuo)
@@ -192,8 +192,58 @@ def crossover(selecionados):
             new_almoco1 = [almoco1[0:ponto_corte], almoco2[ponto_corte:]]
             new_almoco2 = [almoco1[ponto_corte:], almoco2[0:ponto_corte]]
 
-            metade_filho = {"desjejum": new_desjejum1, "almoco": new_almoco1, "lanche": new_lanche1}
-            outra_metade_filho = {"desjejum": new_desjejum2, "almoco": new_almoco2, "lanche": new_lanche2}
+            metade_filho = dict()
+            metade_filho['desjejum'] = list()
+
+            outra_metade_filho = dict()
+            outra_metade_filho['desjejum'] = list()
+
+
+            for i in new_desjejum1[0]:
+                metade_filho['desjejum'].append(i)
+
+            for i in new_desjejum1[1]:
+                metade_filho['desjejum'].append(i)
+
+            for i in new_desjejum2[0]:
+                outra_metade_filho['desjejum'].append(i)
+
+            for i in new_desjejum2[1]:
+                outra_metade_filho['desjejum'].append(i)
+
+
+            metade_filho['lanche'] = list()
+            outra_metade_filho['lanche'] = list()
+
+
+            for i in new_lanche1[0]:
+                metade_filho['lanche'].append(i)
+
+            for i in new_lanche1[1]:
+                metade_filho['lanche'].append(i)
+
+            for i in new_lanche2[0]:
+                outra_metade_filho['lanche'].append(i)
+
+            for i in new_lanche2[1]:
+                outra_metade_filho['lanche'].append(i)
+
+
+            metade_filho['almoco'] = list()
+            outra_metade_filho['almoco'] = list()
+
+
+            for i in new_almoco1[0]:
+                metade_filho['almoco'].append(i)
+
+            for i in new_almoco1[1]:
+                metade_filho['almoco'].append(i)
+
+            for i in new_almoco2[0]:
+                outra_metade_filho['almoco'].append(i)
+
+            for i in new_almoco2[1]:
+                outra_metade_filho['almoco'].append(i)
 
             cruzados.append(metade_filho)
             cruzados.append(outra_metade_filho)
@@ -216,7 +266,10 @@ def mutation(crossed, db: Session):
         else:
             new = search_food(db=db, grupo=1)
 
-        ind['desjejum'][posicao] = new
+        tamanho = len(new)
+        aux = random.randint(0, tamanho - 1)
+
+        ind['desjejum'][posicao] = new[aux]
 
         posicao = random.randint(0, 2)
 
@@ -226,14 +279,20 @@ def mutation(crossed, db: Session):
             new = search_food(db=db, grupo=8)
         else:
             new = search_food(db=db, grupo=1)
+    
+        tamanho = len(new)
+        aux = random.randint(0, tamanho - 1)
 
-        ind['lanche'][posicao] = new
+        ind['lanche'][posicao] = new[aux]
 
         posicao = random.randint(1, 7)
 
         new = search_plate(db=db, tipo=posicao)
+        
+        tamanho = len(new)
+        aux = random.randint(0, tamanho - 1)
 
-        ind['almoco'][posicao - 1] = new
+        ind['almoco'][posicao - 1] = new[aux]
 
         mutados.append(ind)
 
