@@ -15,23 +15,27 @@ def get_db():
         db.close()
 
 
-@algoritmo.get("/genetic/{tam_pop}")
-def algoritmo_genetico(tam_pop: int, db: Session = Depends(get_db)):
+@algoritmo.get("/genetic/{tam_pop}/{qtd_dias}")
+def algoritmo_genetico(tam_pop: int, qtd_dias: int, db: Session = Depends(get_db)):
     """
         Descrição: Rota responsável por gerar os cardápios semanais.
     """
+    final = []
 
-    populacao = generate_population(tam_pop=tam_pop, db=db)
+    for _ in range(qtd_dias):
+        populacao = generate_population(tam_pop=tam_pop, db=db)
 
-    result = populacao
+        result = populacao
 
-    while len(result) != 1:
-        fitness, qtd_ind = function_fitness(result, db=db)
+        while len(result) != 1:
+            fitness, qtd_ind = function_fitness(result, db=db)
 
-        selecao = function_selection(fitness, qtd_ind)
+            selecao = function_selection(fitness, qtd_ind)
 
-        cruzados = crossover(selecao)
+            cruzados = crossover(selecao)
 
-        result = mutation(cruzados, db=db)
+            result = mutation(cruzados, db=db)
 
-    return {"resultado": result}
+        final.append(result)
+
+    return {"resultado": final}

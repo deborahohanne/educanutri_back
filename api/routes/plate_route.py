@@ -5,7 +5,6 @@ from typing import List
 
 from api.model.database import SessionLocal, engine
 
-
 prato = APIRouter()
 
 
@@ -18,7 +17,8 @@ def get_db():
 
 
 @prato.post("/prato/criar/", response_model=schemas.Prato)
-def create_plate(nome: str, tipo: int, cor: int, consistencia: int, prato: schemas.PratoCreate, db: Session = Depends(get_db)):
+def create_plate(nome: str, tipo: int, cor: int, consistencia: int, prato: schemas.PratoCreate,
+                 db: Session = Depends(get_db)):
     prato = crud.create_plate(db=db, prato=prato)
     return prato
 
@@ -27,6 +27,7 @@ def create_plate(nome: str, tipo: int, cor: int, consistencia: int, prato: schem
 def read_plate(db: Session = Depends(get_db)):
     pratos = crud.get_plates_all(db)
     return pratos
+
 
 @prato.get("/prato/buscar/{prato_id}")
 def read_plate_by_id(prato_id: int, db: Session = Depends(get_db)):
