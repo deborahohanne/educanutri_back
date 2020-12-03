@@ -16,9 +16,9 @@
 ## FERRAMENTAS
 
 <ul>
-   <li><b>Linguagem:</b> Python</li>
-   <li><b>FastAPI</b></li> 
-   <li><b>Docker</b></li> 
+   <li><b>Linguagem:</b> [Python](https://www.python.org/)</li>
+   <li><b>[FastAPI](https://fastapi.tiangolo.com/)</b></li> 
+   <li><b>[Docker](https://www.docker.com/)</b></li> 
 </ul>   
 
 ## COMO RODAR A APLICAÇÃO 
