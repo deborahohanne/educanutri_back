@@ -16,7 +16,7 @@
 ## FERRAMENTAS
 
 <ul>
-   <li> Linguagem de programação: Python </li>
+   <li> Linguagem de programação: Python <a href="https://www.python.org/"> </li>
    <li> FastAPI <a href="https://fastapi.tiangolo.com/"> </li>
    <li> Docker <a href="https://www.docker.com/"> </li> 
 </ul>   
