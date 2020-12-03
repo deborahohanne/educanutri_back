@@ -16,15 +16,15 @@
 ## FERRAMENTAS
 
 <ul>
-   <li>- Linguagem: [Python](https://www.python.org/)</li>
-   <li>- [FastAPI](https://fastapi.tiangolo.com/)</li>
-   <li>- [Docker](https://www.docker.com/)</li> 
+   <li> Linguagem: Python <a href="https://www.python.org/"></li>
+   <li> FastAPI <a href="https://fastapi.tiangolo.com/"> </li>
+   <li> Docker <a href="https://www.docker.com/"> </li> 
 </ul>   
 
 ## COMO RODAR A APLICAÇÃO 
 <p align="justify"> Para abrir uma das amostras do projeto, comece fazendo checkout de uma da ramificações(Branch) pricipal(master) e abra o diretório raiz em qualquer editor de texto.</p>
 
-## Prerequisites
+## Pré requisitos
 
 - [Python 3.8](https://www.python.org/)
 
