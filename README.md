@@ -24,7 +24,7 @@
 ## COMO RODAR A APLICAÇÃO 
 <p align="justify"> Para abrir uma das amostras do projeto, comece fazendo checkout de uma da ramificações(Branch) pricipal(master) e abra o diretório raiz em qualquer editor de texto.</p>
 
-## Pré requisitos
+### Pré requisitos
 
 - [Python 3.8](https://www.python.org/)
 
