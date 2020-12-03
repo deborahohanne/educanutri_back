@@ -29,7 +29,7 @@
 - [Python 3.8](https://www.python.org/)
 
 
-### CLONANDO O PROJETO
+### Clonando o projeto
 
 1. Clone o repositório:
 
