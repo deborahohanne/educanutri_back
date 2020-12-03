@@ -24,6 +24,11 @@
 ## COMO RODAR A APLICAÇÃO 
 <p align="justify"> Para abrir uma das amostras do projeto, comece fazendo checkout de uma da ramificações(Branch) pricipal(master) e abra o diretório raiz em qualquer editor de texto.</p>
 
+## Prerequisites
+
+- [Python 3.8](https://www.python.org/)
+
+
 ### CLONANDO O PROJETO
 
 1. Clone o repositório:
@@ -40,7 +45,33 @@ git checkout master
 
 <b>Nota:</b> Se você desejar alterar para uma ramificação(Branch) diferente, substitua "master" pelo nome da ramificação(Branch) que deseja visualizar.
 
-3. Por fim, abra o diretório educanutri_back/ noeditor.
+3. Por fim, abra o diretório educanutri_back/ no editor.
+
+### Docker
+
+No projeto, a raiz cria o Dockerfile
+
+```bash
+# docker image build -t <IMAGE_NAME> <DOCKERFILE_DIRECTORY>
+docker image build -t <IMAGE_NAME> .
+```
+
+Execute o contêiner usando a imagem gerada
+```bash
+#  docker run <IMAGE_NAME>
+docker run <IMAGE_NAME>
+```
+
+### Docker Compose
+
+Na raiz do projeto execute
+```
+docker-compose up
+```
+or
+```
+docker-compose up --build
+```
    
 ## REPOSITÓRIO FRONT-END
 
