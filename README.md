@@ -17,9 +17,30 @@
 
 <ul>
    <li><b>Linguagem:</b> Python</li>
-   <li><b>FastAPI/b></li> 
+   <li><b>FastAPI</b></li> 
    <li><b>Docker</b></li> 
 </ul>   
+
+## COMO RODAR A APLICAÇÃO 
+<p align="justify"> Para abrir uma das amostras do projeto, comece fazendo checkout de uma da ramificações(Branch) pricipal(master) e abra o diretório raiz em qualquer editor de texto.</p>
+
+### CLONANDO O PROJETO
+
+1. Clone o repositório:
+
+```
+git clone https://github.com/MilenaNobre/educanutri_frontend.git
+```
+
+2. Esta etapa garante que você esteja na ramificação principal. 
+
+```
+git checkout master
+```
+
+<b>Nota:</b> Se você desejar alterar para uma ramificação(Branch) diferente, substitua "master" pelo nome da ramificação(Branch) que deseja visualizar.
+
+3. Por fim, abra o diretório educanutri_back/ noeditor.
    
 ## REPOSITÓRIO FRONT-END
 
