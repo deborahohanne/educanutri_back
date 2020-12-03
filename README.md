@@ -34,7 +34,7 @@
 1. Clone o repositório:
 
 ```
-git clone https://github.com/MilenaNobre/educanutri_frontend.git
+git clone https://github.com/deborahohanne/educanutri_back.git
 ```
 
 2. Esta etapa garante que você esteja na ramificação principal. 
