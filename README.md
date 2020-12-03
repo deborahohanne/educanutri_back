@@ -68,7 +68,7 @@ Na raiz do projeto execute
 ```
 docker-compose up
 ```
-or
+ou
 ```
 docker-compose up --build
 ```
