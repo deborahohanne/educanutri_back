@@ -11,7 +11,7 @@ from api.routes import algorithm_genetic, food_route, plate_route, export_data
 app = FastAPI(
     title="Educanutri API",
     description="API Educanutri",
-    version='0.1.0'
+    version='0.1.1'
 )
 
 

@@ -145,7 +145,8 @@ def function_fitness(populacao, db: Session):
 
 def function_selection(nova_populacao, qtd_ind):
     if qtd_ind == 1:
-        selecionados = nova_populacao[0]
+        selecionados = nova_populacao
+
     else:
         tamanho = qtd_ind
         tamanho_nova_pop = len(nova_populacao)
@@ -163,6 +164,7 @@ def function_selection(nova_populacao, qtd_ind):
 
 
 def crossover(selecionados):
+
     cruzados = []
     tamanho = len(selecionados)
 
