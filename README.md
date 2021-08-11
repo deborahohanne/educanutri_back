@@ -1,4 +1,4 @@
-# Algoritmo Genético para elaboração de Cardápio Nutricionais para Alimentação Escolar - EDUCANUTRI 
+# Algoritmo Genético para Elaboração de Cardápio Nutricionais para Alimentação Escolar - EDUCANUTRI 
 
 <p align="center"> Status do Projeto: Em desenvolvimento.
 <div align="center">   
